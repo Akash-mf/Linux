@@ -1,0 +1,41 @@
+Sure, here are some related Linux commands similar to netstat:
+
+ss: The ss command is used to dump socket statistics. It can display more TCP and state information than other tools. It is considered a replacement for netstat.
+
+Example: ss -tuln to display all TCP and UDP sockets.
+ip route: The ip route command is used to manipulate routing tables. It can be used to display, add, delete, or modify routes.
+
+Example: ip route show to display routing table.
+ip -s link: The ip -s link command is used to display network interface statistics.
+
+Example: ip -s link show to display detailed statistics for all interfaces.
+ip maddr: The ip maddr command is used to display and manipulate multicast group information.
+
+Example: ip maddr show to display multicast group memberships.
+ipchains: The ipchains command is used to set up and configure packet filtering rules in the Linux kernel's networking stack.
+
+Example: ipchains -L to list the current set of rules.
+These commands offer various functionalities related to networking and can be used to gather information and configure networking aspects of the Linux system.
+
+
+Linux Troubleshooting commands
+
+Here are some useful Linux commands for troubleshooting:
+
+dmesg: Shows kernel log messages, which can help diagnose issues related to hardware, driver issues, or system startup.
+lsof: Lists open files and the processes that have opened them. Useful for finding processes that are locking files or resources.
+strace: Traces system calls and signals of a running process, which can help debug program behavior.
+tcpdump: Captures network traffic for analysis, helpful for diagnosing network-related issues.
+lsmod: Lists loaded kernel modules, which can help identify if a particular module is loaded or not.
+top or htop: Displays real-time information about running processes, CPU and memory usage, which can help identify resource hogs.
+ps aux: Lists all running processes with details like CPU and memory usage.
+netstat: Displays network connections, routing tables, and interface statistics.
+iotop: Monitors disk I/O usage, useful for diagnosing disk-related performance issues.
+journalctl: Displays system logs from the systemd journal, helpful for troubleshooting system and service issues.
+free: Shows the amount of free and used memory in the system.
+df: Reports file system disk space usage.
+du: Estimates file space usage, useful for finding large files or directories.
+tail or head: Displays the last or first few lines of a file, often used to monitor log files.
+lspci and lsusb: Lists PCI and USB devices, respectively, which can help identify hardware components.
+uname -a: Prints system information, including the kernel version.
+These commands, combined with their various options and filters, can be powerful tools for diagnosing and troubleshooting issues on Linux systems.

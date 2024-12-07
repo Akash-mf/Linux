@@ -1,0 +1,154 @@
+-rw------: A file that is only accessible by its owner.
+-rwxr-xr--x: A file that is executable by every user on the system A" world -executable " file.
+-rw-rw-rw- : A file that is open to modification by every user on the system.
+drwxr-xr-x : A directory that every user on the system can read and access.
+drwxrwx--- : A directory that is modifiable (including its contents ) by its owner and group.
+drwxr-x--- : A directory that is accessible by its group.  
+                                                           
+
+Linux Monitoring Process:
+
+Here are some commonly used Linux commands for monitoring processes:
+
+top: An interactive process viewer that shows a real-time view of running processes, their CPU and memory usage, and other details.
+htop: An improved version of top with a better interactive user interface and more features.
+ps aux: Lists all running processes on the system, along with their process ID (PID), user, CPU and memory usage, and other information.
+pgrep: Searches for processes based on their name or other attributes.
+pidof: Finds the process ID (PID) of a running program.
+killall: Kills one or more processes by name.
+kill: Sends a signal to a process, typically used to terminate a process by specifying its PID.
+nice and renice: Used to change the priority of a process, either when launching it (nice) or for an already running process (renice).
+lsof: Lists open files and the processes that opened them, useful for identifying which process is using a particular file or socket.
+strace: Traces system calls and signals for a running process, useful for debugging.
+netstat: Shows network-related information, including open ports and established connections.
+iotop: Monitors disk I/O usage per process, helping to identify processes causing high disk activity.        
+
+cat: Displays the contents of one or more text files.
+less / more: Pagers that allow scrolling through text files one screen at a time.
+head: Displays the first few lines of a text file.
+tail: Displays the last few lines of a text file.
+grep: Searches for patterns in text files and prints matching lines.
+sed: Stream editor for parsing and transforming text.
+awk: A powerful text processing language and utility for working with structured data.
+cut: Extracts specific sections or columns from each line of a file.
+sort: Sorts lines of text files.
+uniq: Reports or filters out repeated lines in a file.
+tr: Translates or deletes characters in text files.
+join: Joins lines from two files based on a common field.
+paste: Merges lines from multiple files side by side.
+diff: Compares two text files and shows the differences.
+wc: Counts lines, words, and characters in a text file.
+tee: Reads from standard input and writes to both standard output and one or more files.
+xargs: Constructs argument lists and executes commands from standard input.  
+
+
+patching and updating Linux commands for Ubuntu distribution
+
+Here are some common commands for patching and updating a Ubuntu Linux distribution:
+
+Update Package Lists:
+sudo apt update: This command fetches the package lists from the configured sources and updates the local package index. It should be run before upgrading to ensure you have the latest package information.
+Upgrade Packages:
+sudo apt upgrade: This command upgrades all installed packages to their latest versions by downloading and installing updated packages from the repositories.
+sudo apt full-upgrade: Similar to apt upgrade, but it will also remove obsolete packages and install new dependencies as needed.
+Dist-Upgrade to a New Ubuntu Release:
+sudo apt dist-upgrade: This command handles upgrading to a new Ubuntu release by intelligently handling changing dependencies. It should only be used when upgrading to a new release.
+Install Security Updates:
+sudo apt install unattended-upgrades: This command installs the unattended-upgrades package, which can be configured to automatically install security updates.
+sudo dpkg-reconfigure -plow unattended-upgrades: This command launches a configuration wizard to set up automatic security updates.
+Check for Available Updates:
+sudo apt update && sudo apt list --upgradable: This command updates the package lists and then displays a list of packages that have upgrades available.
+Install Specific Packages:
+sudo apt install package1 package2 ...: This command installs one or more specified packages and their dependencies.
+Remove Packages:
+sudo apt remove package1 package2 ...: This command removes one or more specified packages, but leaves configuration files intact.
+sudo apt autoremove: This command removes any packages that were automatically installed as dependencies but are no longer needed.
+Clean Package Cache:
+sudo apt clean: This command clears the local repository of retrieved package files, freeing up disk space.
+It's generally recommended to run sudo apt update before running any upgrade or installation commands to ensure you have the latest package information. Additionally, it's a good practice to periodically run sudo apt upgrade to keep your system up-to-date with the latest security patches and bug fixes.      
+
+
+patching and updating Linux commands for CentOS distribution
+
+Here are some common commands for patching and updating a CentOS Linux distribution:
+
+Update Package Lists:
+sudo yum check-update: This command checks for available package updates but does not download or install them.
+sudo yum updateinfo: This command displays information about available package updates, including security advisories and bug fixes.
+Upgrade Packages:
+sudo yum update: This command downloads and installs the latest version of all installed packages from the configured repositories.
+sudo yum upgrade: This command is an alias for yum update and performs the same function.
+Upgrade to a New CentOS Release:
+sudo yum upgrade --releasever=<new_release_version>: This command upgrades the entire system to the specified release version of CentOS.
+Install Security Updates:
+sudo yum --security update: This command installs only the latest security updates for packages installed on the system.
+sudo yum --security upgrade: This command installs the latest security updates and also handles updated dependencies.
+Check for Available Updates:
+sudo yum list updates: This command lists all available package updates without installing them.
+Install Specific Packages:
+sudo yum install package1 package2 ...: This command installs one or more specified packages and their dependencies.
+Remove Packages:
+sudo yum remove package1 package2 ...: This command removes one or more specified packages and their dependencies.
+sudo yum autoremove: This command removes any packages that were automatically installed as dependencies but are no longer needed.
+Clean Package Cache:
+sudo yum clean packages: This command clears the package cache, freeing up disk space.
+sudo yum clean all: This command clears all cached data, including packages, headers, and metadata.
+It's generally recommended to run sudo yum check-update or sudo yum updateinfo periodically to check for available updates. When updates are available, you can run sudo yum update or sudo yum upgrade to install them. Additionally, it's a good practice to periodically run sudo yum --security update or sudo yum --security upgrade to ensure your system is up-to-date with the latest security patches.
+
+Here are some common commands for patching and updating an Oracle Linux distribution:
+
+Update Package Lists:
+sudo yum check-update: This command checks for available package updates but does not download or install them.
+sudo yum updateinfo: This command displays information about available package updates, including security advisories and bug fixes.
+Upgrade Packages:
+sudo yum update: This command downloads and installs the latest version of all installed packages from the configured repositories.
+sudo yum upgrade: This command is an alias for yum update and performs the same function.
+Apply Security Updates:
+sudo yum --security update: This command installs only the latest security updates for packages installed on the system.
+sudo yum --security upgrade: This command installs the latest security updates and also handles updated dependencies.
+Check for Available Updates:
+sudo yum list updates: This command lists all available package updates without installing them.
+Install Specific Packages:
+sudo yum install package1 package2 ...: This command installs one or more specified packages and their dependencies.
+Remove Packages:
+sudo yum remove package1 package2 ...: This command removes one or more specified packages and their dependencies.
+sudo yum autoremove: This command removes any packages that were automatically installed as dependencies but are no longer needed.
+Clean Package Cache:
+sudo yum clean packages: This command clears the package cache, freeing up disk space.
+sudo yum clean all: This command clears all cached data, including packages, headers, and metadata.
+Upgrade to a New Oracle Linux Release:
+sudo yum upgrade-minimal --releasever=<new_release_version>: This command upgrades the system to the specified release version of Oracle Linux while minimizing package changes.
+sudo yum upgrade --releasever=<new_release_version>: This command performs a full upgrade to the specified release version, including all package updates.
+It's important to note that Oracle Linux is binary-compatible with Red Hat Enterprise Linux (RHEL), so the package management commands are similar to those used in RHEL and CentOS.
+
+It's generally recommended to run sudo yum check-update or sudo yum updateinfo periodically to check for available updates. When updates are available, you can run sudo yum update or sudo yum upgrade to install them. Additionally, it's a good practice to periodically run sudo yum --security update or sudo yum --security upgrade to ensure your system is up-to-date with the latest security patches.
+
+Here are some common commands for patching and updating a Rocky Linux distribution:
+
+Update Package Lists:
+sudo dnf check-update: This command checks for available package updates but does not download or install them.
+sudo dnf updateinfo: This command displays information about available package updates, including security advisories and bug fixes.
+Upgrade Packages:
+sudo dnf upgrade: This command downloads and installs the latest version of all installed packages from the configured repositories.
+sudo dnf distro-sync: This command upgrades all installed packages to the latest version available for the configured release version of Rocky Linux.
+Apply Security Updates:
+sudo dnf --security upgrade: This command installs only the latest security updates for packages installed on the system.
+Check for Available Updates:
+sudo dnf list updates: This command lists all available package updates without installing them.
+Install Specific Packages:
+sudo dnf install package1 package2 ...: This command installs one or more specified packages and their dependencies.
+Remove Packages:
+sudo dnf remove package1 package2 ...: This command removes one or more specified packages and their dependencies.
+sudo dnf autoremove: This command removes any packages that were automatically installed as dependencies but are no longer needed.
+Clean Package Cache:
+sudo dnf clean packages: This command clears the package cache, freeing up disk space.
+sudo dnf clean all: This command clears all cached data, including packages, headers, and metadata.
+Upgrade to a New Rocky Linux Release:
+sudo dnf system-upgrade: This command upgrades the entire system to the next major release version of Rocky Linux.
+Rocky Linux is a community-driven enterprise Linux distribution that is binary-compatible with Red Hat Enterprise Linux (RHEL), so the package management commands are similar to those used in RHEL, CentOS, and Oracle Linux. However, Rocky Linux uses the dnf package manager instead of yum.
+
+It's generally recommended to run sudo dnf check-update or sudo dnf updateinfo periodically to check for available updates. When updates are available, you can run sudo dnf upgrade or sudo dnf distro-sync to install them. Additionally, it's a good practice to periodically run sudo dnf --security upgrade to ensure your system is up-to-date with the latest security patches.
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

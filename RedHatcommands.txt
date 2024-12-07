@@ -1,0 +1,149 @@
+User Management:
+useradd username: Create a new user account.
+userdel username: Delete a user account.
+usermod options username: Modify user account settings.
+passwd username: Change a user's password.
+id username: Display user ID (UID), group ID (GID), and group memberships.
+
+Group Management:
+groupadd groupname: Create a new group.
+groupdel groupname: Delete a group.
+groupmod options groupname: Modify group settings.
+groups [username]: List groups a user belongs to.
+
+User and Group Management:
+chage options username: Change user password aging policies.
+gpasswd options groupname: Manage group members and administrators.
+File and Directory Permissions:
+chmod permissions file/directory: Change permissions for files and directories.
+chown user[:group] file/directory: Change ownership of files and directories.
+chgrp group file/directory: Change the group ownership of files and directories.
+
+Viewing Permissions:
+ls -l: List files and directories with detailed permissions information.
+stat file/directory: Display detailed file/directory status, including permissions.
+Special Permissions:
+chmod +s file: Set the setuid (SUID) permission bit on a file.
+chmod +s directory: Set the setgid (SGID) permission bit on a directory.
+chmod +t directory: Set the sticky bit on a directory.
+
+Access Control Lists (ACLs):
+getfacl file/directory: Display ACLs for a file or directory.
+setfacl options file/directory: Set ACLs for a file or directory.
+
+SELinux Management:
+getenforce: Check the current SELinux mode (Enforcing, Permissive, or Disabled).
+setenforce mode: Set the SELinux mode (Enforcing, Permissive, or Disabled).
+restorecon file/directory: Restore SELinux context on a file or directory.
+These commands are just a subset of the available tools for user, group, and permission management in RHEL. It's essential to refer to the official Red Hat documentation or the respective man pages (man command) for detailed usage and options specific to your RHEL version and requirements.
+
+
+
+Red hat enterprise Linux commands for Patch and update operating system and applications
+
+Here are some common Red Hat Enterprise Linux (RHEL) commands for patching and updating the operating system and applications:
+
+System Update:
+yum update: Update all installed packages to their latest versions.
+yum update package_name: Update a specific package to its latest version.
+yum upgrade: Upgrade all packages to the latest compatible versions.
+
+Package Installation:
+yum install package_name: Install a new package.
+yum groupinstall group_name: Install a group of related packages.
+
+Package Removal:
+yum remove package_name: Remove an installed package.
+yum groupremove group_name: Remove a group of related packages.
+
+Package Information:
+yum info package_name: Display information about a package.
+yum list installed: List all installed packages.
+yum list available: List all available packages in the configured repositories.
+
+Repository Management:
+yum repolist: List all enabled and disabled repositories.
+yum-config-manager --enable repo_name: Enable a specific repository.
+yum-config-manager --disable repo_name: Disable a specific repository.
+
+System Update with DNF (Dandified YUM):
+dnf update: Update all installed packages to their latest versions.
+dnf upgrade: Upgrade all packages to the latest compatible versions.
+
+Kernel Updates:
+yum update kernel: Update the kernel to the latest version.
+grub2-mkconfig -o /boot/grub2/grub.cfg: Update the GRUB configuration after a kernel update.
+
+Applying Patches and Errata:
+yum update --security: Update only security-related packages.
+yum update --advisory=advisory_id: Update packages related to a specific advisory.
+
+Cleanup and Maintenance:
+yum clean all: Clean up cached package data and metadata.
+package-cleanup --oldkernels --count=2: Keep only the two most recent kernel versions.
+
+Monitoring Updates:
+yum check-update: Check for available package updates.
+yum updateinfo: Display information about available updates, including security advisories and bug fixes.
+Note that in RHEL 8 and later versions, the dnf package manager is introduced as the successor to yum. However, yum is still supported for backward compatibility. It's recommended to use dnf for newer RHEL versions.
+
+Additionally, you can use graphical package managers like gnome-software or yumex for a more user-friendly experience in managing updates and packages.
+
+Remember to always exercise caution when updating packages, as it may potentially impact system stability or application functionality. It's advisable to review the update details, perform proper testing, and create system backups before applying critical updates.
+
+Monitor system performance
+
+Here are some common Red Hat Enterprise Linux (RHEL) commands and tools for monitoring system performance:
+
+Top:
+top: Display real-time information about running processes, CPU and memory usage.
+
+htop:
+htop: An interactive process viewer with improved visuals and features compared to top.
+
+System Monitor:
+gnome-system-monitor: A graphical system monitoring tool for GNOME desktop environments.
+
+CPU:
+mpstat: Report processors-related data.
+iostat: Monitor CPU load, disk I/O statistics, and more.
+
+Memory:
+free: Display the amount of free and used memory.
+vmstat: Report virtual memory statistics.
+
+Disk I/O:
+iostat: Monitor disk I/O statistics.
+iotop: Display real-time disk I/O information for processes.
+
+Network:
+netstat: Display network connections, routing tables, and interface statistics.
+nload: Monitor network traffic and bandwidth usage.
+iptraf: Interactive colorized IP traffic monitor.
+
+System Activity:
+sar: Collect, report, and save system activity information.
+vmstat: Report virtual memory, kernel threads, disks, CPU activity.
+
+Logging:
+tail -f /var/log/messages: Monitor system log messages in real-time.
+journalctl: Query and display system and kernel logs.
+
+Process Management:
+ps aux: Display detailed information about running processes.
+pstree: Display a process tree.
+lsof: List open files and their associated processes.
+System Information:
+uname -a: Display system information (kernel version, architecture, etc.).
+cat /proc/cpuinfo: Display CPU information.
+cat /proc/meminfo: Display memory information.
+Monitoring Tools:
+Nagios: A popular open-source monitoring tool for servers, applications, and services.
+Zabbix: An enterprise-class open-source monitoring solution.
+Prometheus: A modern open-source monitoring and alerting system.
+These commands and tools can provide valuable insights into various system performance metrics, such as CPU usage, memory consumption, disk I/O, network traffic, and more. However, it's essential to interpret the output correctly and establish appropriate baselines and thresholds for your specific system and workloads.
+
+Additionally, RHEL offers advanced monitoring solutions like Red Hat Insights and Red Hat Ansible Automation Platform, which provide comprehensive monitoring, analytics, and automation capabilities for large-scale deployments.
+
+
+

@@ -1,0 +1,127 @@
+effectively write a Python program for the project. Create Python Linux Script to Generate a Disk Usage Report There are many choices when it comes to writing scripts on Linux. The bash shell script has been a popular choice since the bash shell itself is a programming language and the commands used in the script match the syntax of the shell. Python is becoming increasingly popular for scripting on Linux because of its simple syntax, easy access to Linux system commands, and powerful libraries with which to create reports, for example. In addition, Python can be used in other applications and on multiple platforms, so there is also the benefit of learning one language for many programming requirements.
+
+In this course, you will create a Python script in which you will determine disk space and generate a report on disk usage on an Ubuntu Linux system. step by step instruction to complete the project
+
+Sure, I can provide you with step-by-step instructions to create a Python script that generates a disk usage report on an Ubuntu Linux system.
+
+Step 1: Open a text editor
+Open a text editor of your choice on your Ubuntu system. You can use gedit, nano, or any other editor you prefer.
+
+Step 2: Create a new Python file
+Create a new file and save it with a descriptive name, such as disk_usage_report.py.
+
+Step 3: Import necessary modules
+At the beginning of the file, import the required modules. In this case, you'll need the shutil module for disk usage information and the os module for interacting with the operating system.
+
+python
+
+
+Copy code
+import shutil
+import os
+Step 4: Define the function to get disk usage
+Create a function that retrieves the disk usage information. You can use the shutil.disk_usage() function to get the total disk space, used space, and free space.
+
+python
+
+
+Copy code
+def get_disk_usage(path):
+    """
+    Returns the disk usage statistics for the given path.
+    """
+    disk_usage = shutil.disk_usage(path)
+    total = disk_usage.total
+    used = disk_usage.used
+    free = disk_usage.free
+    return total, used, free
+Step 5: Define the function to generate the report
+Create a function that generates the disk usage report. This function should call the get_disk_usage() function and format the output in a readable manner.
+
+python
+
+
+Copy code
+def generate_report(path):
+    """
+    Generates a disk usage report for the given path.
+    """
+    total, used, free = get_disk_usage(path)
+    
+    # Convert bytes to gigabytes
+    total_gb = total // (2 ** 30)
+    used_gb = used // (2 ** 30)
+    free_gb = free // (2 ** 30)
+    
+    report = f"Disk Usage Report for {path}\n"
+    report += f"Total Disk Space: {total_gb} GB\n"
+    report += f"Used Space: {used_gb} GB\n"
+    report += f"Free Space: {free_gb} GB\n"
+    
+    return report
+Step 6: Get the target directory from the user
+Prompt the user to enter the directory for which they want to generate the disk usage report.
+
+python
+
+
+Copy code
+target_dir = input("Enter the directory path: ")
+Step 7: Generate and print the report
+Call the generate_report() function with the user-provided directory path and print the generated report.
+
+python
+
+
+Copy code
+report = generate_report(target_dir)
+print(report)
+Step 8: Save and run the script
+Save the Python file and run it from the terminal using the following command:
+
+
+Copy code
+python disk_usage_report.py
+When you run the script, it will prompt you to enter the directory path. After entering the path, it will generate and print the disk usage report for that directory.
+
+Here's the complete Python script:
+
+python
+
+
+Copy code
+import shutil
+import os
+
+def get_disk_usage(path):
+    """
+    Returns the disk usage statistics for the given path.
+    """
+    disk_usage = shutil.disk_usage(path)
+    total = disk_usage.total
+    used = disk_usage.used
+    free = disk_usage.free
+    return total, used, free
+
+def generate_report(path):
+    """
+    Generates a disk usage report for the given path.
+    """
+    total, used, free = get_disk_usage(path)
+    
+    # Convert bytes to gigabytes
+    total_gb = total // (2 ** 30)
+    used_gb = used // (2 ** 30)
+    free_gb = free // (2 ** 30)
+    
+    report = f"Disk Usage Report for {path}\n"
+    report += f"Total Disk Space: {total_gb} GB\n"
+    report += f"Used Space: {used_gb} GB\n"
+    report += f"Free Space: {free_gb} GB\n"
+    
+    return report
+
+target_dir = input("Enter the directory path: ")
+report = generate_report(target_dir)
+print(report)
+This script will generate a disk usage report for the specified directory, showing the total disk space, used space, and free space in gigabytes (GB).

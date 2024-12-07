@@ -1,0 +1,44 @@
+The top command is a useful tool in Unix-based operating systems (like Linux and macOS) that displays real-time information about the running processes on the system. When you run the top command in the terminal, it shows a dynamically updating list of processes, sorted by various criteria such as CPU usage, memory usage, or process ID (PID).
+
+Here's a breakdown of the information displayed by the top command:
+
+System Summary: The top few lines show a summary of the system's overall status, including uptime, number of running processes, CPU load averages, and memory usage.
+Process List: The main section displays a list of running processes, with each row representing a single process. The columns provide information such as the PID, user who started the process, CPU and memory usage, command name, and more.
+CPU Usage: The top command displays the percentage of CPU time used by each process, as well as the overall CPU usage for the system.
+Memory Usage: The memory usage for each process is shown, including the resident set size (RSS), which is the amount of physical memory used by the process.
+Process State: The state of each process is displayed, indicating whether it's running, sleeping, stopped, or in some other state.
+Load Average: The load average values represent the average system load over the past 1, 5, and 15 minutes, giving an indication of how busy the system has been recently.
+The top command is interactive, meaning you can use various keyboard commands to sort the process list, kill processes, change the display mode, and more. Some common keyboard shortcuts include:
+
+q: Quit the top command.
+k: Kill a process (you'll be prompted for the PID or process name).
+r: Renice (change the priority) of a process.
+f: Add or remove fields (columns) from the process list.
+o: Change the sorting order of the process list.
+The top command is particularly useful for system administrators and power users to monitor system performance, identify resource-intensive processes, and troubleshoot issues related to CPU, memory, or other system resources.
+
+Copy
+
+
+A
+define PID, USER, PR, NI VIRT, RES, SHRS, %CPU , %MEM, TIME+, Command
+
+Sure, here's what each of those columns in the top command output represents:
+
+PID (Process ID): A unique identification number assigned to each process running on the system.
+USER: The username of the user who started the process.
+PR (Priority): The priority value of the process, which determines how much CPU time the process receives relative to other processes.
+NI (Nice Value): A value that determines the scheduling priority of a process. A higher nice value means lower priority.
+VIRT (Virtual Memory Size): The total amount of virtual memory used by the process, including shared libraries and memory that may not be resident.
+RES (Resident Memory Size): The amount of physical memory (RAM) that the process is currently using.
+SHR (Shared Memory): The amount of shared memory used by the process, which is memory that could be shared with other processes.
+%CPU: The percentage of CPU time that the process has used since the last update.
+%MEM: The percentage of available physical memory that the process is currently using.
+TIME+: The total CPU time that the process has used since it started, in a format like hours:minutes:seconds.
+Command: The name of the executable or command that started the process, along with any command-line arguments.
+These columns provide detailed information about each running process, allowing you to understand how system resources are being utilized and identify potential issues or bottlenecks. The specific columns displayed can be customized using the f (fields) interactive command within top.
+
+Copy
+Retry
+
+

@@ -1,0 +1,96 @@
+manage user accounts , groups, and permissions (centos, Oracle Linux , Alma Linux ,Rocky Linux) type commands separatly
+
+Here are the commands to manage user accounts, groups, and permissions in different Linux distributions:
+
+CentOS, Oracle Linux, Alma Linux, Rocky Linux:
+
+User Management:
+
+useradd username: Create a new user account
+userdel username: Delete a user account
+usermod options username: Modify a user account
+Group Management:
+
+groupadd groupname: Create a new group
+groupdel groupname: Delete a group
+groupmod options groupname: Modify a group
+Permissions Management:
+
+chmod permissions file/directory: Change permissions of a file or directory
+chown user:group file/directory: Change the owner and group of a file or directory
+getfacl file/directory: Display Access Control Lists (ACLs) for a file or directory
+setfacl options file/directory: Set Access Control Lists (ACLs) for a file or directory
+Other Commands:
+
+su username: Switch to another user account
+sudo command: Execute a command with superuser privileges
+passwd username: Change the password for a user account
+id username: Display user and group information
+Ubuntu/Debian:
+
+User Management:
+
+adduser username: Create a new user account
+deluser username: Delete a user account
+usermod options username: Modify a user account
+Group Management:
+
+addgroup groupname: Create a new group
+delgroup groupname: Delete a group
+groupmod options groupname: Modify a group
+Permissions Management:
+
+chmod permissions file/directory: Change permissions of a file or directory
+chown user:group file/directory: Change the owner and group of a file or directory
+getfacl file/directory: Display Access Control Lists (ACLs) for a file or directory
+setfacl options file/directory: Set Access Control Lists (ACLs) for a file or directory
+Other Commands:
+
+su username: Switch to another user account
+sudo command: Execute a command with superuser privileges
+passwd username: Change the password for a user account
+id username: Display user and group information
+Note: The syntax and options for some commands may vary slightly between distributions, but the basic functionality remains the same.
+
+Copy
+
+
+
+manage user accounts , groups, and permissions (centos, Oracle Linux , Alma Linux ,Rocky Linux) type commands separatly
+
+CentOS, Oracle Linux, Alma Linux, Rocky Linux:
+
+User Management:
+
+useradd username: Create a new user account
+userdel username: Delete a user account
+usermod -l new_username old_username: Change a username
+usermod -L username: Lock a user account
+usermod -U username: Unlock a user account
+usermod -G groups username: Add a user to supplementary groups
+usermod -a -G groups username: Add a user to more supplementary groups
+Group Management:
+
+groupadd groupname: Create a new group
+groupdel groupname: Delete a group
+groupmod -n new_groupname old_groupname: Change a group name
+groupmod -g gid groupname: Change a group ID
+usermod -a -G groups username: Add a user to more supplementary groups
+Permissions Management:
+
+chmod permissions file/directory: Change permissions of a file or directory (e.g., chmod 644 file.txt)
+chown user:group file/directory: Change the owner and group of a file or directory
+getfacl file/directory: Display Access Control Lists (ACLs) for a file or directory
+setfacl -m u:user:permissions file/directory: Set ACLs for a user on a file or directory
+setfacl -m g:group:permissions file/directory: Set ACLs for a group on a file or directory
+setfacl -x u:user file/directory: Remove ACLs for a user on a file or directory
+setfacl -x g:group file/directory: Remove ACLs for a group on a file or directory
+Other Commands:
+
+su username: Switch to another user account
+sudo command: Execute a command with superuser privileges
+passwd username: Change the password for a user account
+id username: Display user and group information
+groups username: Display groups a user belongs to
+umask: Set the default file permissions for new files and directories
+These commands are used in CentOS, Oracle Linux, Alma Linux, and Rocky Linux, which are based on Red Hat Enterprise Linux (RHEL). Note that some options and syntax may vary slightly between different versions of these distributions.
